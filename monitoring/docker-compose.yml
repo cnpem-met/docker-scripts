@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  hls_v2:
+    container_name: ioc-hls_v2
+    build:
+      context: .
+      dockerfile: Dockerfile-iocHLS
+    network_mode: host
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    volumes:
+      - /usr/data/repo-HLS:/usr/data/repo-HLS
+    stdin_open: true
+    tty: true
+    entrypoint: /usr/scripts/run-ioc-HLS.sh
+    restart: unless-stopped
+  concrete_v2:
+    container_name: ftp-concrete_v2
+    build:
+      context: .
+      dockerfile: Dockerfile-ftp
+    network_mode: host
+    volumes:
+      - /usr/data/repo-concrete:/usr/data/repo-concrete
+      - /usr/data/ftp-concrete:/usr/data/ftp-concrete
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    entrypoint: bash

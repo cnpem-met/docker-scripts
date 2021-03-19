@@ -1,0 +1,16 @@
+FROM debian9-epics
+
+RUN apt-get clean
+RUN rm -rf /tmp/*
+
+RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+
+COPY install-ioc-HLS.sh /tmp
+RUN chmod +x /tmp/install-ioc-HLS.sh
+
+RUN mkdir /usr/apps
+
+RUN /tmp/install-ioc-HLS.sh
+
+COPY run-ioc-HLS.sh /usr/scripts/
+RUN chmod +x /usr/scripts/run-ioc-HLS.sh

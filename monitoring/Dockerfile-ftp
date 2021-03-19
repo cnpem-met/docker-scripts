@@ -1,0 +1,20 @@
+FROM debian:buster
+
+RUN apt-get update
+RUN apt-get install wget git nano -y
+RUN apt-get install vsftpd ufw -y
+
+RUN mkdir /usr/scripts
+
+COPY scripts/ftp-concrete/vsftpd.conf /etc
+
+COPY scripts/ftp-concrete/run-ftp.sh /usr/scripts
+RUN chmod +x /usr/scripts/run-ftp.sh
+
+EXPOSE 20 21
+
+COPY scripts/ftp-concrete/config-ftp.sh /tmp
+RUN chmod +x /tmp/config-ftp.sh
+RUN ./tmp/config-ftp.sh
+
+#CMD /etc/init.d/vsftpd restart
