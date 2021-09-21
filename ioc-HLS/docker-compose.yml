@@ -1,10 +1,11 @@
 version: '3.9'
 services:
-  hls_v2:
-    container_name: ioc-hls_v2
+  hls:
+    container_name: ioc-hls
     build: .
+    network_mode: host
     devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      - "/dev/ttyUSB1:/dev/ttyUSB1"
     volumes:
       - /usr/data/repo-HLS:/usr/data/repo-HLS
     stdin_open: true

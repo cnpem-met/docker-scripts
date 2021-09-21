@@ -2,7 +2,7 @@ FROM debian:buster
 
 RUN apt-get update
 RUN apt-get install wget git nano -y
-RUN apt-get install vsftpd ufw -y
+RUN apt-get install vsftpd -y
 
 COPY vsftpd.conf /etc
 

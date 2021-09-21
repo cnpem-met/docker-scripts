@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  setup:
+    container_name: ioc-hls-setup
+    build: .
+    network_mode: host
+    stdin_open: true
+    tty: true
+    entrypoint: /usr/scripts/run-ioc-HLS-Setup.sh
+    restart: unless-stopped

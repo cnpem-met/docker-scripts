@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd /usr/apps/HLS-EpicsApp/iocBoot/iocHLS/ && ./iocHLS.cmd
+cd /usr/apps/hls-epics-ioc/iocBoot/iocHLS/ && ./iocHLS.cmd

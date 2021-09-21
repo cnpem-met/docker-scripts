@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ufw allow 20:21/tcp
-ufw allow 1024:1048/tcp
-ufw enable
+#ufw allow 20:21/tcp
+#ufw allow 1024:1048/tcp
+#ufw enable
 
 useradd -m MTI -s /usr/sbin/nologin
 usermod --password $(openssl passwd -1 M*T*I123) MTI

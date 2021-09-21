@@ -1,10 +1,12 @@
 version: '3.9'
 services:
   concrete:
-    container_name: ioc-concrete_v2
+    container_name: ioc-concrete
     build:
       context: .
       args:
+        - EPICS_BASE=/usr/local/epics/base
+    environment:
         - EPICS_BASE=/usr/local/epics/base
     network_mode: host
     volumes:

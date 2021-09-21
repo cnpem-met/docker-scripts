@@ -11,6 +11,7 @@ make install && install -v -m755 -d /usr/share/doc/swig-4.0.2 && cp -v -R Doc/* 
 
 #export EPICS_BASE=/usr/local/epics/base
 
-pip3 install pcaspy xlrd pandas
+#pip3 install pcaspy
+pip3 install xlrd pandas
 
 cd /usr/apps/ && git clone https://github.com/lnls-gam/Concrete-Instrum-Scripts ioc-concrete

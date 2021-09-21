@@ -1,8 +1,8 @@
 FROM debian9-epics
 
-ARG EPICS_BASE
+#ARG EPICS_BASE
 
-RUN echo "env: $EPICS_BASE"
+#RUN echo "env: $EPICS_BASE"
 
 RUN apt-get update
 
